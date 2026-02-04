@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+
+* {
+  font-family: "Zalando Sans SemiExpanded", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
