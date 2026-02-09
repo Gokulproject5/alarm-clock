@@ -9,11 +9,3 @@
 }
 
 
-span{
-  background-color: rgb(255, 255, 255);
-  color: rgb(255, 236, 65);
-  font-weight: 800;
-  font-display: fallback;
-  border-radius: 100%;
-  padding: 10px;
-}
