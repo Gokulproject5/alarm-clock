@@ -11,7 +11,7 @@ const snoozealarmBtnEL = document.getElementById("snoozeAlarmBtn");
 
 
 
-let alarmTime = "";
+ let alarmTime = "";
  let isRinging = false; 
  const SnoozeTime = 1;
 
@@ -19,16 +19,12 @@ let alarmTime = "";
 
 function displayTime(){
 let now = new Date();
-
 let hour = now.getHours()
 let minute = now.getMinutes().toString().padStart(2,"0");
 let seconds = now.getSeconds().toString().padStart(2,"0");
 const amPm = hour>12 ? "PM":"AM";
 hour=(hour%12 || 12).toString().padStart(2,"0");
- 
-
 displaytimeEL.textContent =`${hour}:${minute}:${seconds} ${amPm}`
-
 let checkTime = `${hour} : ${minute} ${amPm}`
 console.log(checkTime);
 console.log(alarmTime);
@@ -39,11 +35,9 @@ if(alarmTime === checkTime && !isRinging){
     alert("Alarm set Sucessfully");
 }
 }
-
 setInterval(displayTime,1000)
-
 displayTime()
-
+//alarm set
 setalarmbtnEL.addEventListener('click',()=>{
 const hour = hourEl.value.trim();
 const minute = minEL.value.trim();
@@ -64,12 +58,9 @@ if(Number.isNaN(hourval)|| hourval>12 || hourval<0 || minval >59 || minval<0 || 
 }
 const h = hourval.toString().padStart(2,"0");
 const m = minval.toString().padStart(2,"0");
-
 alarmTime = `${h} : ${m} ${ampm}`
-
 })
-
-
+//audio set
 function audioAlarm(){
     
     alarmAudio.play();
@@ -86,11 +77,12 @@ snoozealarmBtnEL.addEventListener("click",()=>{
     let now = new Date();
     let hour = now.getHours();
     let min = now.setMinutes()+SnoozeTime;
+    let mins = now.getMinutes();
     let amPm = hour>12? "PM" : "AM";
     hour = (hour % 12 || 12).toString().padStart(2,"0");
 
-    alarmTime = `${hour} :${min} ${amPm}`;
+    alarmTime = `${hour} :${mins} ${amPm}`;
 
- console.log(alarmTime);
+
  
 })
