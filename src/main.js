@@ -78,6 +78,7 @@ function audioAlarm(){
 
 cancelalarmBtnEl.addEventListener("click",()=>{
     isRinging = false;
+    alarmAudio.pause();
     alarmTime = "";
 })
 
