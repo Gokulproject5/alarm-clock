@@ -29,7 +29,10 @@ function displayTime() {
   if (alarmTime === checkTime && !isRinging) {
     isRinging = true;
     audioAlarm();
-    alert("Alarm set Sucessfully");
+    alert("RING RING");
+    cancelalarmBtnEl.style.display="flex";
+    snoozealarmBtnEL.style.display = "flex"
+
   }
 }
 setInterval(displayTime, 1000);
