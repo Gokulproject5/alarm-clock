@@ -17,11 +17,11 @@ const SnoozeTime = 1;
 //display current time
 
 function displayTime() {
-  const now = new Date();
-  const hour = now.getHours();
-  const minute = now.getMinutes().toString().padStart(2, "0");
-  const seconds = now.getSeconds().toString().padStart(2, "0");
-  const amPm = hour > 12 ? "PM" : "AM";
+  let now = new Date();
+  let hour = now.getHours();
+  let minute = now.getMinutes().toString().padStart(2, "0");
+  let seconds = now.getSeconds().toString().padStart(2, "0");
+  let amPm = hour > 12 ? "PM" : "AM";
   hour = (hour % 12 || 12).toString().padStart(2, "0");
   displaytimeEL.textContent = `${hour}:${minute}:${seconds} ${amPm}`;
  let checkTime = `${hour} : ${minute} ${amPm}`;
@@ -40,9 +40,9 @@ setInterval(displayTime, 1000);
 displayTime();
 //alarm set
 setalarmbtnEL.addEventListener("click", () => {
-  const hour = hourEl.value.trim();
-  const minute = minEL.value.trim();
-  const ampm = ampmEL.value;
+  let hour = hourEl.value.trim();
+  let minute = minEL.value.trim();
+  let ampm = ampmEL.value;
 
   if (hour === "" || minute === "") {
     alert("Enter Your Time");
@@ -84,11 +84,11 @@ cancelalarmBtnEl.addEventListener("click", () => {
 snoozealarmBtnEL.addEventListener("click", () => {
   isRinging = false;
   alarmAudio.pause();
-  const now = new Date();
-  const hour = now.getHours();
+  let now = new Date();
+  let hour = now.getHours();
   now.setMinutes(now.getMinutes() + SnoozeTime)
-  const min = now.getMinutes().toString().padStart(2, "0")
-  const amPm = hour > 12 ? "PM" : "AM";
+  let min = now.getMinutes().toString().padStart(2, "0")
+  let amPm = hour > 12 ? "PM" : "AM";
   hour = (hour % 12 || 12).toString().padStart(2, "0");
 
   alarmTime = `${hour} : ${min} ${amPm}`;
