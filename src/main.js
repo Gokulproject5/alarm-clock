@@ -7,7 +7,7 @@ const alarmAudio = document.getElementById("audio-alarm");
 const setalarmbtnEL = document.getElementById("setalarmbtn");
 const cancelalarmBtnEl = document.getElementById("cancelAlarmBtn");
 const snoozealarmBtnEL = document.getElementById("snoozeAlarmBtn");
-const alarmNotify = document.getElementById("alarm-set-time");
+let alarmNotify = document.getElementById("alarm-set-time");
 
 
 let alarmTime = "";
