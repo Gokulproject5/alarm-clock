@@ -24,7 +24,7 @@ function displayTime() {
   const amPm = hour > 12 ? "PM" : "AM";
   hour = (hour % 12 || 12).toString().padStart(2, "0");
   displaytimeEL.textContent = `${hour}:${minute}:${seconds} ${amPm}`;
-  const checkTime = `${hour} : ${minute} ${amPm}`;
+ let checkTime = `${hour} : ${minute} ${amPm}`;
 
 
   if (alarmTime === checkTime && !isRinging) {
