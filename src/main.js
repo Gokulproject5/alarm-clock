@@ -88,5 +88,5 @@ snoozealarmBtnEL.addEventListener("click", () => {
   let amPm = hour > 12 ? "PM" : "AM";
   hour = (hour % 12 || 12).toString().padStart(2, "0");
 
-  alarmTime = `${hour} :${min} ${amPm}`;
+  alarmTime = `${hour} : ${min} ${amPm}`;
 });
