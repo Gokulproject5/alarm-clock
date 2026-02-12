@@ -44,7 +44,7 @@ setalarmbtnEL.addEventListener("click", () => {
   const ampm = ampmEL.value;
 
   if (hour === "" || minute === "") {
-    alert("Enter time");
+    alert("Enter Your Time");
     return;
   }
 
@@ -59,7 +59,7 @@ setalarmbtnEL.addEventListener("click", () => {
     minval < 0 ||
     Number.isNaN(minval)
   ) {
-    alert("Enter valid Time ");
+    alert("Enter Your Valid Time ");
     return;
   }
   const h = hourval.toString().padStart(2, "0");
