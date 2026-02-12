@@ -30,7 +30,7 @@ function displayTime() {
     isRinging = true;
     audioAlarm();
     alert("RING RING");
-    cancelalarmBtnEl.style.display="flex";
+    cancelalarmBtnEl.style.display = "flex";
     snoozealarmBtnEL.style.display = "flex"
 
   }
@@ -79,11 +79,11 @@ cancelalarmBtnEl.addEventListener("click", () => {
 });
 // snooze time
 snoozealarmBtnEL.addEventListener("click", () => {
-    isRinging = false;
+  isRinging = false;
   let now = new Date();
   let hour = now.getHours();
-  now.setMinutes(now.getMinutes() +  SnoozeTime)
-  let min = now.getMinutes().toString().padStart(2,"0")
+  now.setMinutes(now.getMinutes() + SnoozeTime)
+  let min = now.getMinutes().toString().padStart(2, "0")
   let amPm = hour > 12 ? "PM" : "AM";
   hour = (hour % 12 || 12).toString().padStart(2, "0");
 

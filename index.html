@@ -12,45 +12,76 @@
       href="https://fonts.googleapis.com/css2?family=Zalando+Sans+SemiExpanded:ital,wght@0,200..900;1,200..900&display=swap"
       rel="stylesheet"
     />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
-  <body class="bg-black min-h-screen flex items-center justify-center ">
+  <body class="bg-black min-h-screen flex items-center justify-center">
+    <div>
+      <div class="flex flex-col">
+        <h1 class="text-center text-white text-4xl font-semibold">Alarmly</h1>
+        <div
+          class="flex flex-col justify-center mt-20 mx-auto space-y-3 text-center text-purple-600"
+        >
+          <p id="displaytime" class="text-4xl text-center">00:00:00</p>
+          <div>
+            <audio
+              id="audio-alarm"
+              src="src/assets/alarmAudio.mp3"
+              preload="auto"
+            ></audio>
+          </div>
+          <label> Set Alarm</label>
+          <div
+            class="flex justify-center px-2 py-1 bg-gray-400 rounded-lg shadow-md shadow-gray-800"
+          >
+            <!-- input -->
+            <input
+              class="outline-0 placeholder:text-center flex-1 placeholder:text-white text-center"
+              id="hour-input"
+              type="text"
+              placeholder="HH"
+            />
+            <input
+              class="outline-0 placeholder:text-center flex-1 placeholder:text-white text-center"
+              id="min-input"
+              type="text"
+              placeholder="MM"
+            />
+            <select class="" name="" id="ampm-input">
+              <option value="AM">AM</option>
+              <option value="PM">PM</option>
+            </select>
+          </div>
+          <!-- Btns  -->
+          <div class="flex justify-between mx-auto gap-4">
+            <button
+              class="bg-gray-700 text-white p-2 rounded cursor-pointer hover:bg-gray-600"
+              id="setalarmbtn"
+            >
+              Set alarm
+            </button>
+            <button
+              style="display: none"
+              class="bg-gray-700 text-white p-2 rounded cursor-pointer hover:bg-gray-600"
+              id="cancelAlarmBtn"
+            >
+              cancel alarm
+            </button>
+            <button
+              style="display: none"
+              class="bg-gray-700 text-white p-2 rounded cursor-pointer hover:bg-gray-600"
+              id="snoozeAlarmBtn"
+            >
+              Snooze Alarm
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
 
-<div>
-  <div class=" flex flex-col "> 
-     <h1  class="text-center text-white text-4xl font-semibold"> Alarmly</h1> 
-     <div class="flex flex-col justify-center mt-20 mx-auto space-y-3 text-center text-purple-600">
-        <p id="displaytime" class="text-4xl text-center">00:00:00</p>
-        <div>
-     <audio id="audio-alarm" src="src/assets/alarmAudio.mp3" preload="auto" ></audio>
-  </div>
- <label> Set Alarm</label>
-  <div class="flex  justify-center px-2 py-1 bg-gray-400 rounded-lg shadow-md shadow-gray-800 " >
-  <!-- input -->
-     <input class="outline-0 placeholder:text-center  flex-1 placeholder:text-white text-center " id="hour-input" type="text" placeholder="HH">
-     <input class="outline-0 placeholder:text-center  flex-1 placeholder:text-white text-center " id="min-input" type="text" placeholder="MM">
-      <select  class=""  name="" id="ampm-input">
-        <option value="AM">AM</option>
-        <option value="PM">PM</option>
-      </select>
-         </div>
-         <!-- Btns  -->
-      <div class="flex justify-between mx-auto  gap-4">
-        <button class=" bg-gray-700 text-white p-2 rounded cursor-pointer hover:bg-gray-600 " id="setalarmbtn">
-          Set alarm
-      </button>
-      <button style="display: none;" class=" bg-gray-700 text-white p-2 rounded  cursor-pointer hover:bg-gray-600 " id="cancelAlarmBtn">
-        cancel alarm
-      </button>
-      <button style="display: none;" class=" bg-gray-700 text-white p-2 rounded   cursor-pointer hover:bg-gray-600 " id="snoozeAlarmBtn">
-        Snooze Alarm
-      </button>
-  </div> 
-     </div>
-  </div>
-</div>
-  </body>
     <script type="module" src="./src/main.js"></script>
   </body>
 </html>
