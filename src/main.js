@@ -65,6 +65,7 @@ setalarmbtnEL.addEventListener("click", () => {
   const h = hourval.toString().padStart(2, "0");
   const m = minval.toString().padStart(2, "0");
   alarmTime = `${h} : ${m} ${ampm}`;
+   alert(`ALarm Set at  ${h} : ${m} ${ampm} `);
 });
 //audio set
 function audioAlarm() {
