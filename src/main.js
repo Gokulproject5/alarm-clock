@@ -7,6 +7,8 @@ const alarmAudio = document.getElementById("audio-alarm");
 const setalarmbtnEL = document.getElementById("setalarmbtn");
 const cancelalarmBtnEl = document.getElementById("cancelAlarmBtn");
 const snoozealarmBtnEL = document.getElementById("snoozeAlarmBtn");
+const alarmNotify = document.getElementById("alarm-set-time");
+
 
 let alarmTime = "";
 let isRinging = false;
@@ -15,16 +17,15 @@ const SnoozeTime = 1;
 //display current time
 
 function displayTime() {
-  let now = new Date();
-  let hour = now.getHours();
-  let minute = now.getMinutes().toString().padStart(2, "0");
-  let seconds = now.getSeconds().toString().padStart(2, "0");
+  const now = new Date();
+  const hour = now.getHours();
+  const minute = now.getMinutes().toString().padStart(2, "0");
+  const seconds = now.getSeconds().toString().padStart(2, "0");
   const amPm = hour > 12 ? "PM" : "AM";
   hour = (hour % 12 || 12).toString().padStart(2, "0");
   displaytimeEL.textContent = `${hour}:${minute}:${seconds} ${amPm}`;
-  let checkTime = `${hour} : ${minute} ${amPm}`;
-  console.log(checkTime);
-  console.log(alarmTime);
+  const checkTime = `${hour} : ${minute} ${amPm}`;
+
 
   if (alarmTime === checkTime && !isRinging) {
     isRinging = true;
@@ -65,7 +66,8 @@ setalarmbtnEL.addEventListener("click", () => {
   const h = hourval.toString().padStart(2, "0");
   const m = minval.toString().padStart(2, "0");
   alarmTime = `${h} : ${m} ${ampm}`;
-   alert(`ALarm Set at  ${h} : ${m} ${ampm} `);
+  alarmNotify.textContent = `${h} : ${m} ${ampm}`;
+  alert(`ALarm Set at  ${h} : ${m} ${ampm} `);
 });
 //audio set
 function audioAlarm() {
@@ -81,11 +83,12 @@ cancelalarmBtnEl.addEventListener("click", () => {
 // snooze time
 snoozealarmBtnEL.addEventListener("click", () => {
   isRinging = false;
-  let now = new Date();
-  let hour = now.getHours();
+  alarmAudio.pause();
+  const now = new Date();
+  const hour = now.getHours();
   now.setMinutes(now.getMinutes() + SnoozeTime)
-  let min = now.getMinutes().toString().padStart(2, "0")
-  let amPm = hour > 12 ? "PM" : "AM";
+  const min = now.getMinutes().toString().padStart(2, "0")
+  const amPm = hour > 12 ? "PM" : "AM";
   hour = (hour % 12 || 12).toString().padStart(2, "0");
 
   alarmTime = `${hour} : ${min} ${amPm}`;
